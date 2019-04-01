@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cashflow Free Online Calculator</title>
+    <link href="https://fonts.googleapis.com/css?family=Signika" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="reset.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="start.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="confirmations.css" />
+
+</head>
+<body>
+ 
+
+<div class=" wraper">
+
+           <!-- Początek -->
+           <div id="start" class="start round"><div><h1>Welcome to the RATRACE<br>of CashFlow 101<br><br></h1></div>
+            <div class="line">
+                    <h2>Select your occupation</h2><form>
+                        <select name="occupation" id="occupation">
+                                <option value="">select</option>
+                                <option value="Doctor">Doctor</option>
+                                <option value="Driver">Driver</option>
+                                <option value="Engineer">Engineer</option>
+                                <option value="Keeper">Keeper</option>
+                                <option value="Lawyer">Lawyer</option> 
+                                <option value="Manager">Manager</option>
+                                <option value="Mechanic">Mechanic</option>
+                                <option value="Nurse">Nurse</option>
+                                <option value="Pilot">Pilot</option>
+                                <option value="Policeman">Policeman</option>
+                                <option value="Secretary">Secretary</option>
+                                <option value="Teacher">Teacher</option>    
+                        </select>
+                    </form>
+                </div> 
+                    
+                            <div class="dataLine"><h2><span id="occupationName">Name</span></h2>
+                                Salary <span id="startSalary" class="pos">0</span> <br>Total Costs <span id="startCost" class="neg">0</span><br> 
+                                Cash Flow <span id="startCashflow" class="neu">0</span><br>
+                                Per Child Expense <span id="startChildCost">0</span> <br>Savings <span id="savings">0</span>
+                            </div><br><br><div id="startBtn" class="startBtn round">START</div>
+            
+        </div>
+        <!-- LEWY PANEL -->
+    <div id="left" class="left round hide">
+                                                <a href="#mid"><div id="left_to_middle" class="round">
+                                                        <div id="triangle-right"></div>
+                                                </div></a>
+            <h1>Expenses</h1>
+            <div class="asset-wraper">
+                    <div>Taxes and other expenses<br>
+                        <p class="tAndO">- <span  id="taxesAndOther"></span> $</div></p>
+                    <ul id="loanContainer">
+                        <!---->
+
+
+
+
+
+
+                        <!---->
+                    </ul>
+                </div>
+                    <ul id="childContainer" class="childContainer">
+
+                            </ul>
+    </div>
+        <!-- SRODKOWY PANEL -->
+    <div id="mid" class="mid hide">
+        <span id="occuNameField">Policeman</span>
+        <div class="wyniki">
+            <div><h1>Total expenses</h1>
+            <div id="totalExpenses" class="valueField"></div></div>
+            <div><h1>Passive income</h1>
+                <div id="passiveIncome" class="valueField"></div></div>
+            <div><h1>CashFlow</h1>
+                <h2 class="info">(the money you get <br>when crossing <span>Pay Check</span>)</h2>
+                <div id="cashFlow" class="valueField"></div></div> 
+            <div><h1>Monthly income</h1>
+                <h2 class="info">(the sum of your salary<br>and passive income</h2>
+                <div id="monthlyIncome" class="valueField"></div></div> 
+        </div>  <!-- PANEL Przełączniki  -->
+        <div class="przelaczniki">
+                <a href="#left"> <div id="leftSwitch" class="round">
+                        <div id="triangle-left"></div>
+                </div></a>
+                    
+                <div class="space"></div>
+                <a href="#right"><div id="rightSwitch" class="round">
+                        <div id="triangle-right"></div>
+                </div></a>
+        </div>
+                <!-- PANEL DODAWANIA ELEMENTÓW -->
+        <div class="controllers">
+                <div class="addExpenses">
+                    <div id="addLoan" class="addBtn round">
+                        <div class="icon" style="background-image: url(img/bank.svg);"></div>
+                        <div class="add"></div>
+                                 Loan
+                    </div>
+                    <div id="addChildaaaa" class="addBtn round">
+                            <div id="kiddCover2" class="childDone round hide">DONE!</div>
+                            <div id="kiddCover1" class="childEdit round hide">
+                                    are you <br>sure?<br><br>
+                                <p id="child_add_yes">Yes</p>
+                            </div>
+                            <div class="icon" style="background-image: url(img/baby.svg);"></div>
+                            <div class="add"></div>
+                                     Child
+                    </div>
+                </div>
+                <div class="addAssets">
+                        <div id="addBusiness" class="addBtn round">
+                                <div class="icon" style="background-image: url(img/business.svg);"></div>
+                                <div class="add"></div>
+                                         Business
+                        </div>
+                        <div id="addEstate" class="addBtn round">
+                                <div class="icon" style="background-image: url(img/estate.svg);"></div>
+                                <div class="add"></div>
+                                         Estate
+                        </div>
+                        <div id="addOther" class="addBtn round">
+                                <div class="icon" style="background-image: url(img/other.svg);"></div>
+                                <div class="add"></div>
+                                         Other
+                        </div>
+                        <div id="addStock" class="addBtn round">
+                                <div class="icon" style="background-image: url(img/stock.svg);"></div>
+                                <div class="add"></div>
+                                         Stock
+                        </div>
+                </div>
+        </div>
+    </div>
+        <!-- PRAWY PANEL -->
+    <div id="right" class="right round hide">
+            <a href="#mid"><div id="right_to_middle" class="round">
+                    <div id="triangle-left"></div>
+            </div></a>
+       <h1>Assets</h1>
+       <div class="asset-wraper">
+            <ul id="estateContainer"></ul>
+            <ul id="businessContainer"></ul>
+            <ul id="otherContainer"></ul>
+        </div>
+
+            <ul id="stockContainer" class="stockContainer"></ul>
+            <div class="bigRed"></div>
+    </div>
+</div>
+
+<!-- Pole Nieruchomosci -->
+<div id="estateDimmer" class="dimmerAll hide">
+    <div class="confirmationField round">
+        <div class="littlewrap"> <h1>ADD Real Estate</h1><br>
+            <form>
+ Select type <select id="formEstateType" name="estate">
+                <option value="2 bedroom<br>1bathroom">2 bedroom 1 bathroom</option>
+                <option value="3 bedroom<br>2bathroom">3 bedroom 2 bathroom</option>
+                <option value="Duplex">Duplex</option>
+                <option value="4-Plex">4-Plex</option>
+                <option value="8-Plex">8-Plex</option>
+                <option value="12 Flats">12 Flats</option>
+                <option value="24 Flats">24 Flats</option>
+                <option value="60 Flats">60 Flats</option>
+                <option value="Private<br>quarters">Private quarters</option>
+            </select><br><br>
+            Passive income <input id="formEstateVal1" type="number" name="value1"><br><br>
+            You payed<input id="formEstateVal2" type="number" name="value2"><br><br>
+            Mortgage<input id="formEstateVal3" type="number" name="value3"><br><br><br>
+            <button type="reset" id="estateCancel">Cancel</button>
+            <button type="reset" id="estateConfirm">Add</button>
+        </form>
+            </div><div class="bigicon" style="background-image: url(img/estate.svg);"></div>
+
+</div>
+</div>
+
+<!-- Pole Biznesu -->
+<div id="businessDimmer" class="dimmerAll hide">
+        <div class="confirmationField round">
+            <div class="littlewrap"> <h1>ADD Business</h1><br>
+                <form>
+                Type name<input id="formBusinessType" type="text" name="type"><br><br>
+                Passive income <input id="formBusinessVal1" type="number" name="value1"><br><br>
+                You payed<input id="formBusinessVal2" type="number" name="value2"><br><br>
+                Debt<input id="formBusinessVal3" type="number" name="value3"><br><br><br>
+                <button type="reset" id="businessCancel">Cancel</button>
+                <button type="reset" id="businessConfirm">Add</button>
+            </form>
+                </div><div class="bigicon" style="background-image: url(img/business.svg);"></div>
+    
+    </div>
+    </div>
+
+<!-- Pole Innych -->
+<div id="otherDimmer" class="dimmerAll hide">
+        <div class="confirmationField round">
+            <div class="littlewrap"> <h1>ADD Asset</h1><br>
+                <form>
+                Type name<input id="formotherType" type="text" name="type"><br><br>
+                Passive income <input id="formotherVal1" type="number" name="value1"><br><br>
+                You payed<input id="formotherVal2" type="number" name="value2"><br><br>
+                Debt<input id="formotherVal3" type="number" name="value3"><br><br><br>
+                <button type="reset" id="otherCancel">Cancel</button>
+                <button type="reset" id="otherConfirm">Add</button>
+            </form>
+                </div><div id="otherbigicon" class="bigicon" style="background-image: url(img/other.svg);"></div>
+    
+    </div>
+    </div>
+<!-- Pole Akcji i obligacji -->
+<div id="stockDimmer" class="dimmerAll hide">
+        <div class="confirmationField round">
+            <div class="littlewrap"> <h1>Stock and Fund</h1><br>
+                <form> 
+                Select type <select id="formStockType" name="stock" onsubmit="return false">
+                                <option value="GRO4US">GRO4US Mutual Fund</option>
+                                <option value="MYT4U">MYT4U Electronics Co.</option>
+                                <option value="OK4U">OK4U Drug Co.</option>
+                                <option value="ON2U">ON2U Entertainment Co.</option>
+                            </select><br><br>
+                Amount to buy <input id="formStockVal1" type="number" onsubmit="return false"><br><br>
+                <button type="reset" id="stockCancel">Cancel</button>
+                <button type="reset" id="stockConfirm">Add</button>
+            </form>
+                </div><div id="otherbigicon" class="bigicon" style="background-image: url(img/stock.svg);"></div>
+    
+    </div>
+    </div>
+ <!-- Pole Pozyczki -->
+<div id="loanDimmer" class="dimmerAll hide">
+        <div class="confirmationField round">
+            <div class="littlewrap"> <h1>TAKE a LOAN</h1><br>
+                <form>
+                Type the amount <input id="formLoanType" type="number"> x 1000 $<br><br>
+                <button type="reset" id="loanCancel">Cancel</button>
+                <button type="reset" id="loanConfirm">Add</button>
+            </form>
+                </div><div id="otherbigicon" class="bigicon" style="background-image: url(img/bank.svg);"></div>
+    
+    </div>
+    </div>   
+<!-- Pole Zwyciestwa -->
+<div id="winDimmer" class="dimmerAll hide">
+    <div id="winvideo" class="round"><div id="finish" class="round">Finish!</div></div>
+</div>
+
+</div>
+
+    
+    <script src="modules/global_selectors.js"></script>
+    <script src="app.js"></script>
+    <script src="modules/calculations.js"></script>
+    <script src="modules/estate_functions.js"></script>
+    <script src="modules/child_functions.js"></script>
+    <script src="modules/business_functions.js"></script>
+    <script src="modules/other_functions.js"></script>
+    <script src="modules/stock.js"></script>
+    <script src="modules/loan_functions.js"></script>
+    <script src="modules/starting_conditions.js"></script>
+    <script src="modules/fill_occupation.js"></script>
+</body>
+</html>

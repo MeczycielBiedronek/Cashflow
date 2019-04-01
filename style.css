@@ -1,0 +1,575 @@
+body{
+    font-family: 'Signika', sans-serif;
+    background: url(img/bcg.jpg) center center/cover;
+    overflow: hidden;
+}
+h1{
+    font-size: 2rem;
+}
+li {
+    position: relative;
+    margin-top: 10px; 
+}
+
+/* ID's*/
+
+#totalExpenses {
+    color: #ff0030;
+}
+#passiveIncome {
+    color: #00ff36;
+}
+#cashFlow {
+    color: #ff9600;
+}
+.info{
+    color: grey;
+}.info span{
+    color: #ff9600;
+}ń
+#monthlyIncome{
+    color: lightgray;
+}
+#rightSwitch, #leftSwitch {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+#left_to_middle{
+    display: block;
+    background-color: #ff0030;
+    height: 50%;
+    width: 40px;
+    position: absolute;
+    top: 30%;
+    right: 0;
+}
+#left_to_middle > div,
+#right_to_middle > div{
+    position: absolute;
+    top: 45%;
+    right: 4px;
+}
+#right_to_middle > div{
+    left: 4px;
+}
+    
+#right_to_middle{
+    display: block;
+    background-color: #00ff36;
+    height: 50%;
+    width: 40px;
+    position: absolute;
+    top: 30%;
+    left: 0;
+
+}
+#leftSwitch {
+    background-color: #ff0030;
+    width: 40px;
+    height: 200px;
+}
+#leftSwitch:hover {
+    margin-left: 5px;
+    margin-right: -5px;
+    background-color: #ff9600;
+}
+#rightSwitch {
+    background-color: #00ff36;
+    width: 40px;
+    height: 200px;
+}
+#rightSwitch:hover {
+    margin-right: 5px;
+    margin-left: -5px;
+    background-color: #ff9600;
+}
+#triangle-right, #triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+}
+#triangle-right {
+    border-left: 30px solid white;
+}
+#triangle-left {
+    border-right: 30px solid white;
+}
+#assets_value_1 > span {
+    color: #00ff36;
+}
+#expenses_value_1 > span,
+.tAndO {
+    color: #ff0030;
+}
+/* CLASSES*/
+.wraper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-content: stretch;
+}
+.darker {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.round {
+    border-radius: 10px;
+}
+.left, .mid, .right{ 
+    flex-grow: 1;
+    margin: 10px;
+    text-align: center;
+    min-width: 30vw;
+}
+.mid{
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: stretch;
+    flex-direction: column;
+    align-content: space-around;
+}
+.left {
+    border: 3px solid #ff0030;
+    color: white;
+    max-height: 100%;
+    overflow-y: scroll;
+    padding-left: 10px;
+    position: relative;
+}
+.right::-webkit-scrollbar-thumb{
+    background: #00ff36;
+    border-radius: 10px;
+    
+}
+.left::-webkit-scrollbar-thumb{
+    background: #ff0030; 
+    border-radius: 10px;
+}
+.left::-webkit-scrollbar,  
+.right::-webkit-scrollbar{
+    background: black; 
+    border-radius: 10px;
+}
+.right {
+    text-align: center;
+    border: 3px solid #00ff36;
+    color: white;
+    max-height: 100%;
+    overflow-y: scroll;
+    position: relative;
+}
+.asset-wraper {
+    display: block;
+    flex-direction: column;
+    align-items: stretch;
+    position: relative;
+}
+.stockContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 90%;
+    position: relative;
+}
+.childContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+    width: 90%;
+    position: relative;
+}
+#loanContainer {
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+    align-self: flex-end;
+    align-items: flex-end;
+    width: 90%;
+    position: relative;
+}
+.stockDivToAdd {
+    display: block;
+    height: 86px;
+    width: 70px;
+}
+.stockDivToAdd p:hover, 
+.childEdit p:hover{
+    color: black;
+}
+.stockDivToAdd input{
+    width: 30%;
+}
+.stockDivToAdd span{
+    color: black;
+}
+.bigRed {
+    margin-top:10px;
+    display: block;
+    width: 100%;
+    height: 86px;
+}
+.stockSell,
+.stockEditAmount{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 86px;
+    width: 100%;
+    position: absolute;
+    background-color: #ff0030;
+    bottom: -96px;
+    left:5%;
+    z-index:200;
+}
+.stockEdit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    color: white;
+    background-color: #ff0030;
+    top:0;
+    left:0;
+    z-index:100;
+}
+.stock {
+    display: flex;
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 5px;
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    background-position: top;
+    color: black;
+    position: relative;
+}
+.red {
+    background-color: #ff0030;
+    color: white;
+}
+.stockAmonunt,
+.stockDollars {
+    height: 16px;
+    width: 60px;
+    position: relative;
+    bottom: 0px;
+    right: 0px;
+    display: block;
+    background-color: #ff9600;
+    color: black;
+    margin: 0 5px;
+}
+.stock > .icon {
+    width: 45px;
+    height: 45px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 2px;
+}
+.mid > div {
+    flex-grow: 1;
+}
+.mid > span::before{
+    content: "☻ ";
+
+}
+.wyniki {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+.wyniki > div{
+    flex-grow: 1;
+    min-width: 50%;
+    min-height: 60px;
+}
+.wyniki > div:nth-child(odd) {
+    text-align: left;
+}
+.wyniki > div:nth-child(even) {
+    text-align: right;
+}
+.valueField {
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+}
+.valueField::after {
+    content: " $"
+}
+.przelaczniki {
+    display: flex;
+    justify-content: stretch;
+    align-content: stretch;
+    flex-grow: 1;
+}
+.controllers {
+    display: flex;
+    justify-content: stretch;
+    align-content: stretch;
+}
+.space {
+    flex-grow: 6;
+}
+.addExpenses, .addAssets {
+    flex-grow: 1;
+
+    min-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+    align-content: flex-end;
+}
+.addExpenses{
+    flex-direction:  row-reverse;
+}
+
+.addBtn {
+    display: flex;
+    height: 80px;
+    width: 80px;
+    background-color: #00ff36;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 5px;
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    background-position: top;
+    color: black;
+    position: relative;
+}
+.addBtn:hover{
+    width: 90px;
+    height: 90px;
+    margin: 0px;
+    background-color: #ff9600;
+}
+.addExpenses > .addBtn{
+    background-color: #ff0030;
+}
+.addExpenses > .addBtn:hover{
+    background-color: #ff9600;
+}
+.addBtn > .icon {
+    width: 60px;
+    height: 60px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 5px;
+}
+.addBtn > .add{
+    width: 30px;
+    height: 30px;
+    background: url(img/add1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+.plus{
+    display: flex;
+    width: 90%;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+.minus{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+.removeBtn, .baseExpRemoveBtn{
+    display: block;
+    height: 40px;
+    width: 80px;
+    background-color: #ff0030;
+    margin: 0 10px;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.minus > .removeBtn:hover{
+    margin: -5px 0 -5px 15px;
+}
+.minus > .baseExpRemoveBtn{
+    height: 20px;
+}
+.removeBtn:hover{
+    background: #ff9600;
+    font-size: 1.5rem;
+    height: 50px;
+    width: 85px;
+    margin: -5px 10px -5px 0;
+}
+.assetName, .expName, .baseExpName{
+    text-align: right;
+    display: block;
+    height: 40px;
+    width: 220px;
+    color: black;
+    background: white;
+    position: relative;
+    border-radius: 5px;
+    padding: 2px 10px 0 0;
+}
+.expName{
+    width: 180px;
+    text-align: left;
+    padding: 2px 0 0 10px;
+}
+.baseExpName{
+    height: 20px;
+    width: 180px;
+    text-align: left;
+    padding: 2px 0 0 10px;
+}
+.estate:before, 
+.business:before,
+.other:before{
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 12px;
+}
+.expe:before, 
+.baseExp:before, 
+.ccExpe:before,
+.schExpe:before,
+.carExpe:before,
+.retExpe:before {
+    width: 32px;
+    height: 32px;
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: 12px;
+}
+.estate:before {   
+    content: url(img/estate.svg);}
+.business:before {   
+    content: url(img/business.svg);}
+.other:before {   
+    content: url(img/other.svg);}
+.expe:before {   
+    content: url(img/bank.svg);}
+.ccExpe:before {   
+    content: url(img/cc.svg);}
+.carExpe:before {   
+    content: url(img/car.svg);}
+.schExpe:before {   
+    content: url(img/sch.svg);}
+.retExpe:before {   
+    content: url(img/ret.svg);}
+.valueBox{
+    display: flex;
+    height: 30px;
+}
+.valueBox_negative{
+    display: flex;
+    height: 30px;
+}
+.digits{
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    font-size: 1.2rem;
+    text-align: right;
+}
+.digits > p{
+    font-size: 0.8rem;
+}
+.digits > span::after {
+    content: " $"
+}
+.positive > span::before {
+    content: "+ "
+}.negative > span::before {
+    content: "- "
+}
+.childEdit, .childDone {
+    height: 90px;
+    width: 90px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    color: white;
+    background-color: #ff0030;
+    top:0;
+    left:0;
+    z-index:100;
+}
+.childDone {
+    z-index: 101;
+}
+.hide {
+    display: none;
+}
+@media only screen and (min-width : 820px) {
+    .przelaczniki, #left_to_middle, #right_to_middle {
+        display: none;
+    }
+
+}
+@media only screen and (max-width : 820px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+    .wraper {
+        height: 300vh;
+        width: 100vw;
+        display: grid;
+        grid-template-columns: 100vw;
+        grid-template-rows: 100vh;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    .left, .mid, .right{ 
+        width: 100%;
+        height: 100vh;
+        padding: 20px;
+        margin: 0px;
+        display: block;
+    }
+    .przelaczniki {
+        display: flex;
+        justify-content: stretch;
+        align-content: stretch;
+        flex-grow: 1;
+        height: 80px;
+    }
+    #rightSwitch, #leftSwitch {
+        width: 40px;
+        height: 80px;
+    }
+    .mid {
+        align-content: space-between;
+        display: flex;
+    }
+    .controllers {
+        align-self: flex-end;
+    }
+}
